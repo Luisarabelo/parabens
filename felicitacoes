@@ -1,0 +1,78 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <title>Mensagem Misteriosa</title>
+  <style>
+    body {
+      font-family: Arial, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-align: center;
+      background-color: hsl(330, 80%, 60%);
+    }
+    .form-section {
+      display: block;
+    }
+    .message-section {
+      display: none;
+    }
+    hr {
+      border: none;
+      border-top: 2px solid #333;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-section">
+    <hr>
+    <br><br>
+    Ei, digite seu nome, clique no botão e receba uma mensagem <br><br>
+    <input type="text" id="seuNome"> <br><br>
+    <button onclick="DesejarFelizDiaDasMulheres()">Confirmar</button> <br><br>
+    <hr>
+  </div>
+
+  <div class="message-section" id="messageSection">
+    <hr>
+    <br><br>
+    <p id="mensagem"></p>
+    <br><br>
+    <button onclick="voltarParaFormulario()">Voltar</button>
+    <hr>
+  </div>
+
+  <script>
+   function DesejarFelizDiaDasMulheres(){
+    var nome = document.getElementById("seuNome").value;
+    document.getElementById("mensagem").innerHTML = "Feliz dia das mulheres atrasado rs, " + nome + "!<br>Voce é especial &lt;3";
+    // Esconder seção do formulário
+    document.querySelector('.form-section').style.display = 'none';
+    // Mostrar seção da mensagem
+    document.querySelector('.message-section').style.display = 'block';
+   }
+
+   function voltarParaFormulario() {
+    // Mostrar seção do formulário
+    document.querySelector('.form-section').style.display = 'block';
+    // Esconder seção da mensagem
+    document.querySelector('.message-section').style.display = 'none';
+   }
+  </script>
+</body>
+</html>
